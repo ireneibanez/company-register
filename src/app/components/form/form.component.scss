@@ -1,0 +1,33 @@
+form {
+  background-color: #fff;
+  border-radius: 40px 0px 40px 0px;
+  margin: auto;
+  margin-top: 96px;
+  box-shadow: 3px 3px 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  width: 669px;
+
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #563d98d6;
+  }
+
+  .form-instructions {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #909090;
+
+  }
+
+  .mat-form-field {
+    margin-right: 20px;
+    margin-top: 10px;
+
+  }
+
+}

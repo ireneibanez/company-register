@@ -1,0 +1,57 @@
+<form [formGroup]="form" (ngSubmit)="onSave(form.value)">
+  <h1>Registrar nuevo negocio</h1>
+  <p class="form-instructions">Para registrar un nuevo negocio rellene correctamente la información de los siguientes campos.</p>
+<mat-form-field>
+  <mat-label for="name">Nombre</mat-label>
+  <input matInput type="text" name="name" placeholder="" formControlName="name" id="name">
+  <mat-error *ngIf="form?.controls.name.errors?.required">Campo requerido</mat-error>
+  <mat-error *ngIf="form?.controls.name.errors?.maxlength">Maximo 150 caracteres</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label for="fecha">Fecha de creación</mat-label>
+  <input matInput [matDatepicker]="picker" placeholder="" name="createDate" formControlName="createDate" id="fecha" >
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="form?.controls.createDate.errors?.required">Campo requerido</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label for="size">Tamaño de empresa</mat-label>
+  <mat-select placeholder="" name="size" formControlName="size" id="size" >
+    <mat-option *ngFor="let size of sizes" [value]="size.value">{{size.key}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="form?.controls.size.errors?.required">Campo requerido</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label for="address">Dirección</mat-label>
+  <input matInput type="text" name="address" placeholder="" formControlName="address" id="address" >
+  <mat-error *ngIf="form?.controls.address.errors?.required">Campo requerido</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label for="country">Pais</mat-label>
+  <mat-select placeholder="" name="country" formControlName="country">
+    <mat-option *ngFor="let country of countries" [value]="country.value">{{country.key}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="form?.controls.country.errors?.required">Campo requerido</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label for="phone">Telefono</mat-label>
+  <input matInput type="text" name="phone" placeholder="" formControlName="phone" id="phone" >
+  <mat-error *ngIf="form?.controls.phone.errors?.required">Campo requerido</mat-error>
+  <mat-error *ngIf="form?.controls.phone.errors?.phone">El teléfono debe tener 9 caracteres numéricos</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label for="description">Descripción</mat-label>
+  <textarea matInput type="text" name="description" placeholder="" formControlName="description" id="description" ></textarea>
+  <mat-error *ngIf="form?.controls.description.errors?.maxlength">Maximo 250 caracteres</mat-error>
+</mat-form-field>
+
+<button type="reset" mat-button color="warn" >Borrar</button>
+<button type="submit" mat-button color="primary" [disabled]="!form.valid">Enviar</button>
+
+</form>

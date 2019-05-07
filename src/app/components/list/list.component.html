@@ -1,0 +1,39 @@
+<h1>Mis negocios</h1>
+
+<div class="container">
+  <mat-card *ngFor="let company of companies">
+    <mat-card-header>
+      <h2 class="mat-card-title">{{ company.name }}</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="up">
+        <div class="description">
+          <h3>Descripción</h3>
+          <p class="description__size"> {{ company.description }}</p>
+        </div>
+        <div class="fecha">
+          <h3> Fecha de creación</h3>
+          <p> {{ company.createDate | date:"MM/dd/yyyy"  }}</p>
+        </div>
+      </div>
+      <div class="down">
+        <div class="direccion">
+          <h3>Dirección</h3>
+          <p class="direccion__size">{{ company.address }}</p>
+        </div>
+        <div class="pais">
+          <h3>País</h3>
+          <p>{{ company.country }}</p>
+        </div>
+        <div class="tamaño">
+          <h3> Tamaño</h3>
+          <p>{{ company.size }}</p>
+        </div>
+        <div class="telefono">
+          <h3>Teléfono</h3>
+          <p>{{ company.phone | formatPhone }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

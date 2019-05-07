@@ -1,0 +1,14 @@
+<app-list
+  *ngIf="!errorMessage && companies.length > 0"
+  [companies]="companies"
+></app-list>
+
+
+  <div 
+  class="init-message" *ngIf="!errorMessage && companies.length == 0">
+    No hay ninguna empresa registrada
+  </div>
+
+<div class="error-message" *ngIf="errorMessage">
+  No se ha podido obtener el listado de empresas: {{ errorMessage }}
+</div>

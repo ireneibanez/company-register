@@ -1,0 +1,20 @@
+@mixin description {
+    white-space: normal;
+    height: 80px;
+    overflow-x: scroll;
+}
+
+@mixin titles {
+    color: rgb(238, 236, 236);
+    background-color: #563d98d6;
+    width: 134px;
+    padding: 4px;
+    margin-bottom: 8px;
+    border-radius: 4px 0px 4px 0px;
+}
+
+@mixin error($color) {
+    padding-left: 32px;
+    padding-top: 104px;
+    color: $color;
+}

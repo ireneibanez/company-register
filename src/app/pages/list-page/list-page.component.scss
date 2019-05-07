@@ -1,0 +1,11 @@
+@import "../../../partials/mixins";
+@import "../../../partials/variables";
+
+
+.init-message {
+    @include error($white);
+}
+
+.error-message {
+    @include error($red);
+}
